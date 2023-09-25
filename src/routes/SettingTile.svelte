@@ -29,10 +29,11 @@
 	}
 
 	div {
-		width: 100%;
 		display: flex;
 		align-items: center;
-		border-bottom: 1px solid #cccccc;
 		padding: 1rem;
+	}
+	div:not(:last-child) {
+		border-bottom: 1px solid #cccccc;
 	}
 </style>

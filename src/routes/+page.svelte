@@ -2,6 +2,7 @@
 	import DimensionsSetting from './DimensionsSetting.svelte';
 	import EnumSettings from './EnumSettings.svelte';
 	import NumberSetting from './NumberSetting.svelte';
+	import SettingSection from './SettingSection.svelte';
 	import SettingTile from './SettingTile.svelte';
 	import ToggleSetting from './ToggleSetting.svelte';
 
@@ -14,7 +15,7 @@
 	let selected: number = 1;
 </script>
 
-<div>
+<SettingSection title="Anki">
 	<SettingTile title="Use AnkiConnect" desc="Use AnkiConnect api to create flashcards in Anki.">
 		<ToggleSetting {check} />
 	</SettingTile>
@@ -25,7 +26,9 @@
 	>
 		<NumberSetting {number} />
 	</SettingTile>
+</SettingSection>
 
+<SettingSection title="Popup">
 	<SettingTile title="Popup size" desc="Control the size of the popup, in pixels">
 		<DimensionsSetting {width} {height} />
 	</SettingTile>
@@ -33,17 +36,17 @@
 	<SettingTile title="Scan modifier key" desc="Hold a key while moving the cursor to scan text">
 		<EnumSettings {values} {selected} />
 	</SettingTile>
-</div>
+</SettingSection>
 
 <style lang="scss">
-	div {
-		width: min(600px, calc(100vw - 40px));
-	}
 	:global(body) {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+		gap: 16px;
 
 		font-family: Arial, sans-serif;
+
+		background-color: #f8f9fa;
 	}
 </style>
