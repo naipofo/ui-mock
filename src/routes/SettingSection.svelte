@@ -13,7 +13,7 @@
 
 <style lang="scss">
 	article {
-		width: min(600px, calc(100vw - 40px));
+		width: min(800px, calc(100vw - 40px));
 	}
 	main {
 		background-color: white;

@@ -5,6 +5,7 @@
 	import SettingSection from './SettingSection.svelte';
 	import SettingTile from './SettingTile.svelte';
 	import ToggleSetting from './ToggleSetting.svelte';
+	import DialogController from './DialogController.svelte';
 
 	let check: boolean;
 	let number: number = 1;
@@ -13,6 +14,9 @@
 
 	let values = ['None', 'Shift', 'Ctrl', 'Alt'];
 	let selected: number = 1;
+
+	// logic:
+	let testPopup = false;
 </script>
 
 <SettingSection title="Anki">
@@ -37,6 +41,14 @@
 		<EnumSettings {values} {selected} />
 	</SettingTile>
 </SettingSection>
+
+<SettingSection title="Test">
+	<SettingTile title="Dicts" desc="enabled dictonaries">
+		<ToggleSetting bind:check={testPopup} />
+	</SettingTile>
+</SettingSection>
+
+<DialogController bind:shown={testPopup} title="Dictonares">test</DialogController>
 
 <style lang="scss">
 	:global(body) {
