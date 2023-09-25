@@ -6,6 +6,7 @@
 	import SettingTile from './SettingTile.svelte';
 	import ToggleSetting from './ToggleSetting.svelte';
 	import DialogController from './DialogController.svelte';
+	import DictList from './DictList.svelte';
 
 	let check: boolean;
 	let number: number = 1;
@@ -48,7 +49,9 @@
 	</SettingTile>
 </SettingSection>
 
-<DialogController bind:shown={testPopup} title="Dictonares">test</DialogController>
+<DialogController bind:shown={testPopup} title="Dictonares">
+	<DictList />
+</DialogController>
 
 <style lang="scss">
 	:global(body) {
